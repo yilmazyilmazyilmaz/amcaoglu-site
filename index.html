@@ -7,7 +7,7 @@
 <meta name="description" content="Olgun Amcaoğlu — KKTC Ekonomi ve Enerji Bakanı, UBP Lefkoşa Milletvekili. Güçlü Ekonomi, Aydınlık Gelecek.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=Sacramento&display=swap" rel="stylesheet">
 <style>
   :root{
     --orange:#E7790E;
@@ -68,6 +68,15 @@
   .hero-party{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid #2E4260;color:var(--orange-glow);font-weight:700;font-size:11.5px;padding:8px 16px;letter-spacing:.16em;text-transform:uppercase}
   .hero-party .dot{width:8px;height:8px;border-radius:50%;background:var(--orange)}
   .hero h1{font-family:var(--font-serif);font-size:clamp(44px,6.5vw,72px);line-height:1.04;margin:22px 0 8px;color:#fff;font-weight:700}
+  .hero h1.sig{margin:24px 0 12px}
+  .sig-name{display:block;font-family:"Sacramento",cursive;font-weight:400;color:#fff;font-size:clamp(52px,7vw,100px);line-height:1.15;letter-spacing:.01em}
+  .sig-rule{display:block;width:clamp(160px,22vw,250px);height:3px;background:#E01A22;margin-top:2px}
+  @media (prefers-reduced-motion:no-preference){
+    .sig-name{clip-path:inset(-30% 100% -30% -5%);animation:sigWrite 1.8s ease-out .4s forwards}
+    .sig-rule{transform:scaleX(0);transform-origin:left;animation:sigRule .45s ease-out 2.3s forwards}
+  }
+  @keyframes sigWrite{to{clip-path:inset(-30% -10% -30% -5%)}}
+  @keyframes sigRule{to{transform:scaleX(1)}}
   .hero .role{font-size:15px;font-weight:700;color:var(--orange-glow);margin-bottom:20px;letter-spacing:.14em;text-transform:uppercase}
   .hero .slogan{font-family:var(--font-serif);font-size:clamp(21px,2.7vw,28px);color:#F2F6FA;font-weight:600;font-style:italic;margin-bottom:18px}
   .hero p.intro{color:#93A1B6;max-width:560px;margin-bottom:32px}
@@ -325,7 +334,10 @@
         <span class="tr">Ulusal Birlik Partisi · Lefkoşa Milletvekili</span>
         <span class="en">National Unity Party · MP for Nicosia</span>
       </span>
-      <h1>Olgun Amcaoğlu</h1>
+      <h1 class="sig" aria-label="Olgun Amcaoğlu">
+        <span class="sig-name">Olgun Amcaoğlu</span>
+        <span class="sig-rule"></span>
+      </h1>
       <div class="role">
         <span class="tr">KKTC Ekonomi ve Enerji Bakanı</span>
         <span class="en">TRNC Minister of Economy and Energy</span>
