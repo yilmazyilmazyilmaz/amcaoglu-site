@@ -6,6 +6,17 @@
    ===================================================================== */
 window.NEWS = [
   {
+    img: "img/haber-kablo.jpg",
+    date_tr: "Temmuz 2026", date_en: "July 2026",
+    title_tr: "Türkiye–KKTC elektrik bağlantısı: \"Önemli ve güven verici bir gelişme\"",
+    title_en: "Türkiye–TRNC power link: \"An important and reassuring development\"",
+    text_tr: "Amcaoğlu, Türkiye'den denizaltı kablosuyla elektrik getirilmesini öngören projeyi değerlendirdi.",
+    text_en: "Amcaoğlu assessed the project to bring electricity from Türkiye via submarine cable.",
+    body_tr: "Ekonomi ve Enerji Bakanı Olgun Amcaoğlu, Türkiye'den KKTC'ye denizaltı kablosuyla elektrik getirilmesini öngören enterkonneksiyon projesini \"önemli ve güven verici bir gelişme\" olarak değerlendirdi.\n\nProje kapsamında yaklaşık 100 kilometrelik bir denizaltı kablosuyla 2x400 megavat (toplam 800 MW) kapasiteli doğru akım bağlantısı kurulması ve hattın 2028'de devreye alınması hedefleniyor; yatırım maliyetinin yaklaşık 400 milyon Euro seviyesinde olması öngörülüyor.\n\nAmcaoğlu, projenin yalnızca KKTC'yi değil tüm adayı Avrupa elektrik şebekesine bağlayacağını; arz güvenliğini kalıcı biçimde güçlendirip maliyetleri düşüreceğini ve KKTC'yi Doğu Akdeniz enerji denkleminde önemli bir konuma taşıyacağını vurguladı.",
+    body_en: "Minister of Economy and Energy Olgun Amcaoğlu described the interconnection project to bring electricity from Türkiye to the TRNC by submarine cable as \"an important and reassuring development\".\n\nThe project envisages a roughly 100-kilometre submarine cable carrying a 2x400 MW (800 MW total) direct-current link, targeted to come online in 2028, with an estimated investment of about €400 million.\n\nAmcaoğlu stressed that the link would connect not only the TRNC but the whole island to the European electricity network — permanently strengthening security of supply, lowering costs, and placing the TRNC in a significant position in the Eastern Mediterranean energy equation.",
+    url: "https://brtk.net/amcaoglu-turkiyeden-kktcye-kablo-ile-elektrik-projesini-degerlendirdionemli-ve-guven-verici-bir-gelisme/"
+  },
+  {
     img: "img/haber-dunya.jpg",
     date_tr: "Temmuz 2026", date_en: "July 2026",
     title_tr: "2030 vizyonu: 4 milyon turist, yeni serbest bölge",
@@ -28,6 +39,17 @@ window.NEWS = [
     url: "https://www.adanayerelhaber.com/haber-kktc-ekonomi-ve-enerji-bakani-olgun-amcaoglundan-aosbye-ziyaret-45839.html"
   },
   {
+    img: "img/haber-expel.jpg",
+    date_tr: "Temmuz 2026", date_en: "July 2026",
+    title_tr: "Türkiye'de sanayi temasları: Expel tesislerine ziyaret",
+    title_en: "Industry contacts in Türkiye: visit to Expel facilities",
+    text_tr: "Bakan Amcaoğlu ve heyeti, ilaç üretimi sektörünün öncü kuruluşlarından Expel'i ziyaret etti.",
+    text_en: "Minister Amcaoğlu and his delegation visited Expel, a leading pharmaceutical production company.",
+    body_tr: "Ekonomi ve Enerji Bakanı Olgun Amcaoğlu ve beraberindeki heyet, Türkiye'nin ilaç üretimi ve ilaçlama yöntemleri sektörünün öncü kuruluşlarından Expel'i ziyaret etti.\n\nÜretim tesislerinde incelemelerde bulunan heyet, modern üretim süreçleri ve kalite standartları hakkında bilgi aldı.\n\nZiyarette, iki ülke sanayicileri arasındaki iş birliğinin geliştirilmesi ve Türkiye'deki üretim tecrübesinin KKTC'deki yatırımlara taşınması ele alındı.",
+    body_en: "Minister of Economy and Energy Olgun Amcaoğlu and his delegation visited Expel, one of Türkiye's leading companies in pharmaceutical production and application methods.\n\nTouring the production facilities, the delegation was briefed on modern production processes and quality standards.\n\nThe visit focused on deepening cooperation between the two countries' industrialists and carrying Türkiye's production experience into investments in the TRNC.",
+    url: "https://www.egemengzt.com/haber-kktc-ekonomi-ve-enerji-bakani-olgun-amcaoglundan-expele-ziyaret-74387.html"
+  },
+  {
     img: "img/haber-enerji.jpg",
     date_tr: "Haziran 2026", date_en: "June 2026",
     title_tr: "Sanayide Yeşil Dönüşüm oturumu: \"Türkiye ile et ve tırnak misaliyiz\"",
@@ -48,6 +70,17 @@ window.NEWS = [
     body_tr: "Ekonomi ve Enerji Bakanı Olgun Amcaoğlu, KKTC'nin güneş enerjisi potansiyeline dikkat çekerek enerji politikasının ana eksenini anlattı.\n\nGünde ortalama 9,1 saat güneş alan ada, bu değerle dünya coğrafyasında ilk beşin içinde yer alıyor; yılda 333 gün ve yaklaşık 3.300 saat güneşlenme süresi bulunuyor.\n\nAmcaoğlu, bu potansiyelin yalnızca ülkenin kendi ihtiyacını karşılamakla sınırlı olmadığını, depolamalı sistemler ve şebeke yatırımlarıyla birlikte KKTC'nin enerji ihraç edebilen bir ülke konumuna gelebileceğini vurguladı.",
     body_en: "Minister of Economy and Energy Olgun Amcaoğlu set out the main axis of energy policy by highlighting the TRNC's solar potential.\n\nWith an average of 9.1 hours of sunshine a day, the island ranks among the top five locations in the world; it enjoys 333 sunny days and roughly 3,300 hours of sunshine a year.\n\nAmcaoğlu stressed that this potential goes beyond meeting domestic demand: with storage systems and grid investment, the TRNC can become an energy-exporting country.",
     url: "https://www.diyaloggazetesi.com/kibris/gunes-enerjisine-dikkat-cekti-h119737.html"
+  },
+  {
+    img: "img/haber-fuar.jpg",
+    date_tr: "Nisan 2026", date_en: "April 2026",
+    title_tr: "KKTC üreticisi TurkeyBuild İstanbul 2026'da",
+    title_en: "TRNC producers at TurkeyBuild Istanbul 2026",
+    text_tr: "Amcaoğlu, 48. Yapı, İnşaat Malzemeleri ve Teknoloji Fuarı'nda KKTC standlarını ziyaret etti.",
+    text_en: "Amcaoğlu visited the TRNC stands at the 48th Building Materials and Technology Fair.",
+    body_tr: "Ekonomi ve Enerji Bakanı Olgun Amcaoğlu, İstanbul Tüyap Fuar ve Kongre Merkezi'nde düzenlenen 48. Yapı, İnşaat Malzemeleri ve Teknoloji Fuarı'na (TurkeyBuild 2026) katıldı.\n\n133 ülkeden yaklaşık 500 katılımcı ve 700 markaya ev sahipliği yapan fuarda; Ekonomi ve Enerji Bakanlığı ile Kıbrıs Türk Sanayi Odası iş birliğinde 6 KKTC'li üretici firma da yer aldı.\n\nKKTC standlarını gezen Amcaoğlu, üretici firmaların ürünlerini ve yeniliklerini uluslararası bir platformda tanıtma imkânı bulduğunu belirterek fuarın hem firmalar hem bakanlık açısından önemli tecrübeler kazandırdığını söyledi.",
+    body_en: "Minister of Economy and Energy Olgun Amcaoğlu attended the 48th Building, Construction Materials and Technology Fair (TurkeyBuild 2026) at Istanbul's Tüyap Fair and Congress Centre.\n\nThe fair hosted around 500 exhibitors and 700 brands from 133 countries; six TRNC manufacturers took part through the cooperation of the Ministry of Economy and Energy and the Cyprus Turkish Chamber of Industry.\n\nTouring the TRNC stands, Amcaoğlu noted that the producers had the chance to present their products and innovations on an international stage, and that the fair provided valuable experience for both the companies and the ministry.",
+    url: "https://www.kibrismanset.com/amcaoglu-istanbulda-yapi-insaat-malzemeleri-ve-teknoloji-fuarina-katildi"
   },
   {
     img: "img/haber-meclis.jpg",
