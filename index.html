@@ -52,7 +52,7 @@
   header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:2px solid var(--ink)}
   header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-  .brand-mark{width:42px;height:42px;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px;letter-spacing:.02em}
+  .brand-mark{width:42px;height:42px;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px;letter-spacing:.02em;object-fit:cover;border:2px solid var(--orange)}
   .brand-name{font-weight:800;font-size:17px;line-height:1.1}
   .brand-role{font-size:11.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
   nav.menu{display:flex;align-items:center;gap:26px}
@@ -294,7 +294,7 @@
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top">
-      <div class="brand-mark">OA</div>
+      <img class="brand-mark" src="img/brand-face.jpg" alt="Olgun Amcaoğlu">
       <div>
         <div class="brand-name">Olgun Amcaoğlu</div>
         <div class="brand-role">
@@ -308,7 +308,7 @@
       <a href="#vision"><span class="tr">Vizyon</span><span class="en">Vision</span></a>
       <a href="#projects"><span class="tr">İcraatlar</span><span class="en">Initiatives</span></a>
       <a href="#pledges"><span class="tr">Hedefler</span><span class="en">Goals</span></a>
-      <a href="#news"><span class="tr">Haberler</span><span class="en">News</span></a>
+      <a href="haberler.html"><span class="tr">Haberler</span><span class="en">News</span></a>
       <a href="#gallery"><span class="tr">Galeri</span><span class="en">Gallery</span></a>
       <a href="#contact"><span class="tr">İletişim</span><span class="en">Contact</span></a>
       <button class="lang-btn" onclick="toggleLang()"><span class="tr">EN</span><span class="en">TR</span></button>
@@ -732,7 +732,7 @@
     <div class="f-grid">
       <div>
         <div class="f-brand">
-          <div class="brand-mark">OA</div>
+          <img class="brand-mark" src="img/brand-face.jpg" alt="Olgun Amcaoğlu">
           <div><b>Olgun Amcaoğlu</b><br>
             <span class="tr">KKTC Ekonomi ve Enerji Bakanı</span>
             <span class="en">TRNC Minister of Economy and Energy</span>
@@ -754,7 +754,7 @@
           <li><a href="#vision"><span class="tr">Vizyon</span><span class="en">Vision</span></a></li>
           <li><a href="#ministry"><span class="tr">Bakanlık</span><span class="en">The Ministry</span></a></li>
           <li><a href="#projects"><span class="tr">İcraatlar</span><span class="en">Initiatives</span></a></li>
-          <li><a href="#news"><span class="tr">Haberler</span><span class="en">News</span></a></li>
+          <li><a href="haberler.html"><span class="tr">Haberler</span><span class="en">News</span></a></li>
         </ul>
       </div>
       <div>

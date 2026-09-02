@@ -34,7 +34,7 @@
   header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:2px solid var(--ink)}
   header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1140px}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-  .brand-mark{width:42px;height:42px;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px}
+  .brand-mark{width:42px;height:42px;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px;object-fit:cover;border:2px solid var(--orange)}
   .brand-name{font-weight:800;font-size:17px;line-height:1.1}
   .brand-role{font-size:11.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
   .nav-right{display:flex;align-items:center;gap:18px}
@@ -97,7 +97,7 @@
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="index.html">
-      <div class="brand-mark">OA</div>
+      <img class="brand-mark" src="img/brand-face.jpg" alt="Olgun Amcaoğlu">
       <div>
         <div class="brand-name">Olgun Amcaoğlu</div>
         <div class="brand-role">
