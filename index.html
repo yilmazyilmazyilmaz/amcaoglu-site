@@ -71,8 +71,8 @@
   .hero-party .dot{width:8px;height:8px;border-radius:50%;background:var(--orange)}
   .hero h1{font-family:var(--font-serif);font-size:clamp(44px,6.5vw,72px);line-height:1.04;margin:22px 0 8px;color:#fff;font-weight:700}
   .hero h1.sig{margin:24px 0 12px}
-  .sig-name{display:block;font-family:"Sacramento",cursive;font-weight:400;color:#fff;font-size:clamp(42px,4.8vw,78px);line-height:1.15;letter-spacing:.01em;white-space:nowrap}
-  .sig-rule{display:block;width:clamp(160px,22vw,250px);height:3px;background:#E01A22;margin-top:2px}
+  .sig-name{display:block;position:relative;z-index:2;font-family:"Sacramento",cursive;font-weight:400;color:#fff;font-size:clamp(42px,4.8vw,78px);line-height:1.15;letter-spacing:.01em;white-space:nowrap}
+  .sig-rule{display:block;position:relative;z-index:1;width:clamp(160px,22vw,250px);height:3px;background:#E01A22;margin-top:2px}
   @media (prefers-reduced-motion:no-preference){
     .sig-name{clip-path:inset(-30% 100% -30% -5%);animation:sigWrite 1.8s ease-out .4s forwards}
     .sig-rule{transform:scaleX(0);transform-origin:left;animation:sigRule .45s ease-out 2.3s forwards}
