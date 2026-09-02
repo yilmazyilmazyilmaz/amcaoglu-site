@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haberler — Olgun Amcaoğlu</title>
+<meta name="description" content="Olgun Amcaoğlu — açıklamalar, haberler ve basın odası.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#E7790E;
+    --orange-deep:#E87A06;
+    --orange-soft:#FDF0E1;
+    --orange-glow:#F9A55A;
+    --ink:#0E1C30;
+    --ink-2:#2B3A52;
+    --muted:#5C6879;
+    --line:#E0E6EE;
+    --paper:#FFFFFF;
+    --paper-warm:#F5F8FB;
+    --font-sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --font-serif:"Playfair Display",Georgia,serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:var(--font-sans);color:var(--ink);background:var(--paper);line-height:1.65;font-size:16.5px}
+  img{max-width:100%}
+  a{color:inherit}
+  body.en .tr{display:none !important}
+  body:not(.en) .en{display:none !important}
+  .wrap{max-width:900px;margin:0 auto;padding:0 24px}
+
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:2px solid var(--ink)}
+  header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1140px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand-mark{width:42px;height:42px;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:800;font-size:16px}
+  .brand-name{font-weight:800;font-size:17px;line-height:1.1}
+  .brand-role{font-size:11.5px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .back-link{text-decoration:none;font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+  .back-link:hover{color:var(--orange-deep)}
+  .lang-btn{border:1px solid var(--ink);background:var(--paper);padding:6px 14px;font-weight:800;font-size:13px;cursor:pointer;font-family:inherit}
+  .lang-btn:hover{border-color:var(--orange);color:var(--orange-deep)}
+
+  .page-head{background:var(--ink);color:#fff;padding:56px 0;border-bottom:4px solid var(--orange-deep)}
+  .page-head .kicker{display:inline-flex;align-items:center;gap:14px;font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--orange-glow)}
+  .page-head .kicker::before{content:"";width:42px;height:1px;background:var(--orange-glow)}
+  .page-head h1{font-family:var(--font-serif);font-size:clamp(30px,4.5vw,46px);margin-top:12px}
+
+  main{padding:56px 0 72px}
+
+  /* list view */
+  .news-row{display:grid;grid-template-columns:280px 1fr;gap:26px;padding:26px 0;border-bottom:1px solid var(--line);text-decoration:none;align-items:center}
+  .news-row:first-child{padding-top:0}
+  .news-row img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+  .news-row .date{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-deep)}
+  .news-row h2{font-family:var(--font-serif);font-size:24px;line-height:1.25;margin:6px 0 8px}
+  .news-row p{color:var(--muted);font-size:15px}
+  .news-row .more{display:inline-block;margin-top:10px;font-size:13px;font-weight:800;letter-spacing:.06em;color:var(--orange-deep)}
+  .news-row:hover h2{color:var(--orange-deep)}
+
+  .subhead{font-family:var(--font-serif);font-size:26px;margin:56px 0 6px}
+  .subnote{font-size:14px;color:var(--muted);margin-bottom:14px}
+  .press-item{display:grid;grid-template-columns:130px 1fr auto;gap:20px;padding:18px 10px;border-bottom:1px solid var(--line);align-items:center;text-decoration:none}
+  .press-item:hover{background:var(--orange-soft)}
+  .press-src{background:var(--ink);color:#fff;padding:7px 10px;font-size:12px;font-weight:800;text-align:center;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .press-title{font-weight:700;font-size:15.5px;line-height:1.45}
+  .press-ext{color:var(--orange-deep);font-size:16px;font-weight:800}
+
+  /* article view */
+  .article{display:none}
+  .article.active{display:block}
+  .list-view.hidden{display:none}
+  .article img.hero-img{width:100%;display:block;margin-bottom:28px}
+  .article .date{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-deep)}
+  .article h1{font-family:var(--font-serif);font-size:clamp(26px,4vw,40px);line-height:1.15;margin:10px 0 22px}
+  .article .body{color:var(--ink-2);font-size:16.5px;line-height:1.8;white-space:pre-line;max-width:760px}
+  .article .actions{margin-top:32px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-size:13px;letter-spacing:.1em;text-transform:uppercase;padding:14px 26px;cursor:pointer;border:none;font-family:inherit}
+  .btn-primary{background:var(--orange-deep);color:#fff}
+  .btn-primary:hover{background:var(--ink)}
+  .btn-ghost{border:1px solid var(--ink);color:var(--ink);background:transparent}
+  .btn-ghost:hover{border-color:var(--orange-deep);color:var(--orange-deep)}
+
+  footer{background:var(--ink);color:#9DABC0;padding:28px 0;font-size:13px;text-align:center}
+
+  @media (max-width:700px){
+    .news-row{grid-template-columns:1fr;gap:14px}
+    .press-item{grid-template-columns:1fr;gap:8px}
+    .press-ext{display:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <div class="brand-mark">OA</div>
+      <div>
+        <div class="brand-name">Olgun Amcaoğlu</div>
+        <div class="brand-role">
+          <span class="tr">Ekonomi ve Enerji Bakanı</span>
+          <span class="en">Minister of Economy &amp; Energy</span>
+        </div>
+      </div>
+    </a>
+    <div class="nav-right">
+      <a class="back-link" href="index.html"><span class="tr">← Ana Sayfa</span><span class="en">← Home</span></a>
+      <button class="lang-btn" onclick="toggleLang()"><span class="tr">EN</span><span class="en">TR</span></button>
+    </div>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="wrap">
+    <span class="kicker"><span class="tr">Basın Odası</span><span class="en">Press Room</span></span>
+    <h1><span class="tr">Haberler</span><span class="en">News</span></h1>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <!-- ===== article view ===== -->
+    <div class="article" id="articleView"></div>
+
+    <!-- ===== list view ===== -->
+    <div class="list-view" id="listView">
+      <div id="newsList"></div>
+
+      <h2 class="subhead"><span class="tr">Basında</span><span class="en">In the Press</span></h2>
+      <p class="subnote"><span class="tr">Başka yayın organlarında yayımlanan haberler — kaynağa yönlendirir.</span><span class="en">Coverage published by other outlets — links go to the source.</span></p>
+      <div id="pressList"></div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Olgun Amcaoğlu — <span class="tr">Tüm hakları saklıdır.</span><span class="en">All rights reserved.</span></div>
+</footer>
+
+<script src="haberler-data.js"></script>
+<script>
+  function biSpan(tr, en){
+    return '<span class="tr">' + tr + '</span><span class="en">' + en + '</span>';
+  }
+  function toggleLang(){
+    document.body.classList.toggle('en');
+    document.documentElement.lang = document.body.classList.contains('en') ? 'en' : 'tr';
+  }
+
+  const params = new URLSearchParams(location.search);
+  const id = params.has('id') ? parseInt(params.get('id'), 10) : null;
+
+  function renderList(){
+    document.getElementById('newsList').innerHTML = NEWS.map((n, i) =>
+      '<a class="news-row" href="haberler.html?id=' + i + '">' +
+        '<img src="' + n.img + '" alt="">' +
+        '<div>' +
+          '<div class="date">' + biSpan(n.date_tr, n.date_en) + '</div>' +
+          '<h2>' + biSpan(n.title_tr, n.title_en) + '</h2>' +
+          '<p>' + biSpan(n.text_tr, n.text_en) + '</p>' +
+          '<span class="more">' + biSpan('Haberi oku →', 'Read the story →') + '</span>' +
+        '</div>' +
+      '</a>'
+    ).join('');
+
+    document.getElementById('pressList').innerHTML = PRESS.map(p =>
+      '<a class="press-item" href="' + p.url + '" target="_blank" rel="noopener">' +
+        '<span class="press-src">' + p.source + '</span>' +
+        '<span class="press-title">' + biSpan(p.title_tr, p.title_en) + '</span>' +
+        '<span class="press-ext">↗</span>' +
+      '</a>'
+    ).join('');
+  }
+
+  function renderArticle(n){
+    document.getElementById('listView').classList.add('hidden');
+    const v = document.getElementById('articleView');
+    v.classList.add('active');
+    v.innerHTML =
+      '<img class="hero-img" src="' + n.img + '" alt="">' +
+      '<div class="date">' + biSpan(n.date_tr, n.date_en) + '</div>' +
+      '<h1>' + biSpan(n.title_tr, n.title_en) + '</h1>' +
+      '<div class="body">' + biSpan((n.body_tr || n.text_tr), (n.body_en || n.text_en)) + '</div>' +
+      '<div class="actions">' +
+        '<a class="btn btn-ghost" href="haberler.html">' + biSpan('← Tüm Haberler', '← All News') + '</a>' +
+        (n.url ? '<a class="btn btn-primary" href="' + n.url + '" target="_blank" rel="noopener">' + biSpan('Kaynağa git', 'Go to source') + '</a>' : '') +
+      '</div>';
+    document.title = n.title_tr + ' — Olgun Amcaoğlu';
+  }
+
+  renderList();
+  if (id !== null && NEWS[id]) renderArticle(NEWS[id]);
+</script>
+</body>
+</html>

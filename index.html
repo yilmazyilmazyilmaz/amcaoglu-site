@@ -540,8 +540,8 @@
     <span class="kicker"><span class="tr">İcraatlar &amp; Projeler</span><span class="en">Initiatives &amp; Projects</span></span>
     <h2><span class="tr">Sözle değil, işle</span><span class="en">Deeds, not words</span></h2>
     <p class="lede">
-      <span class="tr">Bakanlık döneminde yürütülen başlıca çalışmalar. <em>(Örnek içerik — gerçek icraat listesiyle güncellenecek.)</em></span>
-      <span class="en">Principal work carried out during the ministerial term. <em>(Sample content — to be updated with the actual record.)</em></span>
+      <span class="tr">Bakanlık döneminde yürütülen başlıca çalışmalar.</span>
+      <span class="en">Principal work carried out during the ministerial term.</span>
     </p>
     <div class="cards">
       <div class="card">
@@ -629,12 +629,11 @@
     <span class="kicker"><span class="tr">Haberler &amp; Basın Odası</span><span class="en">News &amp; Press Room</span></span>
     <h2><span class="tr">Gündemden</span><span class="en">From the agenda</span></h2>
     <p class="lede">
-      <span class="tr">Açıklamalarımız ve basında çıkan haberler. Yeni haber eklemek için sayfa kodundaki <code>NEWS</code> ve <code>PRESS</code> listelerini düzenlemeniz yeterli.</span>
-      <span class="en">Our statements and press coverage. To add news, simply edit the <code>NEWS</code> and <code>PRESS</code> lists in the page code.</span>
+      <span class="tr">Bakanlık gündemine ilişkin açıklamalar ve basında çıkan haberler.</span>
+      <span class="en">Statements on the ministry's agenda and coverage in the press.</span>
     </p>
 
     <h3 class="subhead"><span class="tr">Açıklamalar ve Haberler</span><span class="en">News &amp; Statements</span></h3>
-    <p class="subnote"><span class="tr"><em>(Örnek içerik — gerçek haberlerle güncellenecek.)</em></span><span class="en"><em>(Sample content — to be updated with real news.)</em></span></p>
     <div class="news-cards" id="newsCards"></div>
 
     <h3 class="subhead"><span class="tr">Basında</span><span class="en">In the Press</span></h3>
@@ -780,81 +779,8 @@
   </div>
 </div>
 
+<script src="haberler-data.js"></script>
 <script>
-  /* =====================================================================
-     HABER EKLEME / ADDING NEWS
-     Kendi haberleriniz için NEWS listesine, başka sitelerde yayımlanan
-     haberler için PRESS listesine yeni bir satır ekleyin. Sayfa otomatik
-     olarak kartları oluşturur. (Add a row to NEWS for your own news, or
-     to PRESS for coverage published elsewhere. Cards render automatically.)
-     ===================================================================== */
-  /* body_tr / body_en: haberin TAM METNİ — karta tıklayınca açılan
-     pencerede görünür. Satır atlamak için \n kullanabilirsiniz.
-     (body_tr / body_en hold the FULL TEXT shown in the popup when the
-     card is clicked. Use \n for paragraph breaks.)
-     Her habere görsel eklemek için img alanını kullanın:
-     - "gallery:2"  → galerideki 3. fotoğrafı kullanır (0'dan başlar)
-     - "foto.jpg"   → kendi görsel dosyanız veya bir URL
-     img boş bırakılırsa icon (emoji) gösterilir.
-     (Use the img field to add a picture to a news item: "gallery:N" reuses
-     the Nth gallery photo, or give a file path / URL. Empty = emoji icon.) */
-  const NEWS = [
-    {
-      img: "gallery:1", icon: "⚡", date_tr: "Ağustos 2026", date_en: "August 2026",
-      title_tr: "Enerji yatırımlarında yeni dönem başlıyor",
-      title_en: "A new era begins for energy investment",
-      text_tr: "Bakan Amcaoğlu, yenilenebilir enerji başvurularına ilişkin yeni düzenlemeyi açıkladı.",
-      text_en: "Minister Amcaoğlu announced the new framework for renewable energy applications.",
-      body_tr: "(Örnek metin) Ekonomi ve Enerji Bakanlığı, yenilenebilir enerji yatırımlarına ilişkin yeni başvuru çerçevesini açıkladı.\n\nÇatı üstü ve saha tipi güneş santralleri için başvuru süreçleri sadeleştirilecek, kapasite tahsisleri şeffaf bir takvimle yürütülecek.\n\nBu haberin gerçek tam metnini buraya yapıştırabilirsiniz.",
-      body_en: "(Sample text) The Ministry of Economy and Energy announced the new application framework for renewable energy investment.\n\nApplication processes for rooftop and utility-scale solar plants will be simplified, and capacity allocations will follow a transparent schedule.\n\nPaste the real full text of this news item here.",
-      url: ""
-    },
-    {
-      img: "gallery:5", icon: "⛽", date_tr: "Temmuz 2026", date_en: "July 2026",
-      title_tr: "Akaryakıt fiyatlarında indirim açıklaması",
-      title_en: "Announcement of fuel price reductions",
-      text_tr: "Euro dizel ve gaz yağı fiyatlarında indirime gidileceği duyuruldu.",
-      text_en: "Reductions in Euro diesel and kerosene prices were announced.",
-      body_tr: "(Örnek metin) Bakan Amcaoğlu, akaryakıt fiyatlarında indirime gidileceğini duyurdu.\n\nİndirimin pompa fiyatlarına yansımasıyla hem hanehalkının hem de üreticinin maliyetlerinde rahatlama hedefleniyor.",
-      body_en: "(Sample text) Minister Amcaoğlu announced upcoming reductions in fuel prices.\n\nAs the cut reaches pump prices, the aim is to ease costs for both households and producers.",
-      url: ""
-    },
-    {
-      img: "gallery:2", icon: "🏭", date_tr: "Haziran 2026", date_en: "June 2026",
-      title_tr: "KOBİ destek programında yeni başvuru dönemi",
-      title_en: "New application round for SME support",
-      text_tr: "Üreticilere yönelik destek paketinin ikinci etabı için başvurular açıldı.",
-      text_en: "Applications opened for the second phase of the producer support package.",
-      body_tr: "(Örnek metin) Küçük ve orta ölçekli işletmelere yönelik destek programının ikinci etabında başvurular alınmaya başlandı.\n\nKredi, hibe ve danışmanlık kalemlerinden oluşan paket, üretimde sürekliliği ve istihdamı desteklemeyi amaçlıyor.",
-      body_en: "(Sample text) Applications opened for the second phase of the SME support programme.\n\nThe package — credit, grants, and advisory support — aims to sustain production and employment.",
-      url: ""
-    }
-  ];
-
-  const PRESS = [
-    {
-      source: "ATO",
-      date_tr: "", date_en: "",
-      title_tr: "KKTC Ekonomi ve Enerji Bakanı Amcaoğlu, ATO Başkanı Baran ile görüştü",
-      title_en: "TRNC Minister of Economy and Energy Amcaoğlu met ATO President Baran",
-      url: "https://www.atonet.org.tr/IcerikDetay/24002_kktc-ekonomi-ve-enerji-bakani-amcaoglu--ato-baskani-baran"
-    },
-    {
-      source: "Kıbrıs Manşet",
-      date_tr: "", date_en: "",
-      title_tr: "Olgun Amcaoğlu kimdir?",
-      title_en: "Who is Olgun Amcaoğlu?",
-      url: "https://www.kibrismanset.com/olgun-amcaoglu-kimdir"
-    },
-    {
-      source: "myKıbrıs",
-      date_tr: "", date_en: "",
-      title_tr: "Olgun Amcaoğlu kimdir?",
-      title_en: "Who is Olgun Amcaoğlu?",
-      url: "https://www.mykibris.com/haber/olgun-amcaoglu-kimdir-1069"
-    }
-  ];
-
   function biSpan(tr, en){
     return '<span class="tr">' + tr + '</span><span class="en">' + en + '</span>';
   }
@@ -871,12 +797,10 @@
   function renderNews(){
     const wrap = document.getElementById('newsCards');
     wrap.innerHTML = NEWS.map((n, idx) => {
-      const link = n.url
-        ? '<a class="more" href="' + n.url + '" target="_blank" rel="noopener" onclick="event.stopPropagation()">' + biSpan('Devamını oku →','Read more →') + '</a>'
-        : '';
+      const link = '<a class="more" href="haberler.html?id=' + idx + '">' + biSpan('Devamını oku →','Read more →') + '</a>';
       const src = newsImgSrc(n.img);
       const thumb = src ? '<img src="' + src + '" alt="">' : (n.icon || '📰');
-      return '<article class="news-card" onclick="openNews(' + idx + ')">' +
+      return '<article class="news-card" onclick="location.href=&quot;haberler.html?id=' + idx + '&quot;">' +
         '<div class="news-thumb">' + thumb + '</div>' +
         '<div class="news-body">' +
           '<div class="news-date">' + biSpan(n.date_tr, n.date_en) + '</div>' +
@@ -927,20 +851,6 @@
   }
   modalOv.addEventListener('click', e => { if (e.target === modalOv) closeModal(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
-  function openNews(i){
-    const n = NEWS[i];
-    const src = newsImgSrc(n.img);
-    openModal(
-      (src ? '<img src="' + src + '" alt="">' : '') +
-      '<div class="modal-body">' +
-        '<div class="modal-date">' + biSpan(n.date_tr, n.date_en) + '</div>' +
-        '<div class="modal-title">' + biSpan(n.title_tr, n.title_en) + '</div>' +
-        '<div class="modal-text">' + biSpan(n.body_tr || n.text_tr, n.body_en || n.text_en) + '</div>' +
-        (n.url ? '<div class="modal-actions"><a class="btn btn-primary" href="' + n.url + '" target="_blank" rel="noopener">' + biSpan('Kaynağa git','Go to source') + '</a></div>' : '') +
-      '</div>'
-    );
-  }
 
   document.querySelectorAll('.g-item').forEach(g => {
     g.addEventListener('click', () => {
