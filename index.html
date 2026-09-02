@@ -635,6 +635,9 @@
 
     <h3 class="subhead"><span class="tr">Açıklamalar ve Haberler</span><span class="en">News &amp; Statements</span></h3>
     <div class="news-cards" id="newsCards"></div>
+    <div style="margin-top:28px">
+      <a class="btn btn-ghost" href="haberler.html"><span class="tr">Tüm Haberler</span><span class="en">All News</span></a>
+    </div>
 
     <h3 class="subhead"><span class="tr">Basında</span><span class="en">In the Press</span></h3>
     <p class="subnote"><span class="tr">Başka yayın organlarında yayımlanan haberler — kaynağa yönlendirir.</span><span class="en">Coverage published by other outlets — links go to the source.</span></p>
@@ -779,7 +782,7 @@
   </div>
 </div>
 
-<script src="haberler-data.js"></script>
+<script src="haberler-data.js?v=2"></script>
 <script>
   function biSpan(tr, en){
     return '<span class="tr">' + tr + '</span><span class="en">' + en + '</span>';
@@ -796,7 +799,7 @@
 
   function renderNews(){
     const wrap = document.getElementById('newsCards');
-    wrap.innerHTML = NEWS.map((n, idx) => {
+    wrap.innerHTML = NEWS.slice(0, 3).map((n, idx) => {
       const link = '<a class="more" href="haberler.html?id=' + idx + '">' + biSpan('Devamını oku →','Read more →') + '</a>';
       const src = newsImgSrc(n.img);
       const thumb = src ? '<img src="' + src + '" alt="">' : (n.icon || '📰');
