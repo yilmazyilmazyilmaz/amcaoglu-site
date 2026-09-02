@@ -64,7 +64,9 @@
 
   /* ---------- hero ---------- */
   .hero{background:radial-gradient(1100px 500px at 80% -10%, rgba(230,120,22,.13), transparent 60%),var(--ink);color:#E9EEF5;padding:96px 0 88px;border-bottom:4px solid var(--orange-deep);position:relative;overflow:hidden}
-  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:0 60px;grid-template-areas:"htop hport" "hrest hport";align-items:center}
+  .hero-top{grid-area:htop;align-self:end}
+  .hero-rest{grid-area:hrest;align-self:start}
   .hero-party{display:inline-flex;align-items:center;gap:10px;background:transparent;border:1px solid #2E4260;color:var(--orange-glow);font-weight:700;font-size:11.5px;padding:8px 16px;letter-spacing:.16em;text-transform:uppercase}
   .hero-party .dot{width:8px;height:8px;border-radius:50%;background:var(--orange)}
   .hero h1{font-family:var(--font-serif);font-size:clamp(44px,6.5vw,72px);line-height:1.04;margin:22px 0 8px;color:#fff;font-weight:700}
@@ -89,7 +91,7 @@
   .hero .btn-ghost:hover{border-color:var(--orange-glow);color:var(--orange-glow)}
   .btn-primary{background:var(--orange-deep);color:#fff}
   .btn-ghost{border:1px solid var(--ink);color:var(--ink)}
-  .portrait-stage{position:relative}
+  .portrait-stage{position:relative;grid-area:hport}
   .portrait-bg{position:absolute;left:0;right:0;top:15%;bottom:0;background:var(--orange-deep)}
   .portrait{position:relative;z-index:1;padding:0 30px}
   @media (prefers-reduced-motion:no-preference){
@@ -270,7 +272,9 @@
     .pillars{grid-template-columns:1fr}
     .cards,.news-cards,.g-grid{grid-template-columns:1fr 1fr}
     .figures .wrap{grid-template-columns:1fr 1fr;gap:22px}
-    .portrait-stage{max-width:520px}
+    .hero .wrap{grid-template-areas:"htop" "hport" "hrest"}
+    .portrait-stage{max-width:520px;margin:10px 0 6px}
+    .hero-rest{margin-top:18px}
     nav.menu{display:none;position:absolute;top:70px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:18px 24px;gap:16px}
     nav.menu.open{display:flex}
     .nav-toggle{display:block}
@@ -329,7 +333,7 @@
 <!-- ======== HERO ======== -->
 <section class="hero" id="top">
   <div class="wrap">
-    <div>
+    <div class="hero-top">
       <span class="hero-party"><span class="dot"></span>
         <span class="tr">Ulusal Birlik Partisi · Lefkoşa Milletvekili</span>
         <span class="en">National Unity Party · MP for Nicosia</span>
@@ -342,6 +346,8 @@
         <span class="tr">KKTC Ekonomi ve Enerji Bakanı</span>
         <span class="en">TRNC Minister of Economy and Energy</span>
       </div>
+    </div>
+    <div class="hero-rest">
       <div class="slogan">
         <span class="tr">“Güçlü Ekonomi, Aydınlık Gelecek.”</span>
         <span class="en">“A Strong Economy, A Bright Future.”</span>
