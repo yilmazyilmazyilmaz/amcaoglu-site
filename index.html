@@ -204,8 +204,13 @@
 
   /* ---------- scroll reveal ---------- */
   @media (prefers-reduced-motion:no-preference){
-    .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
     .reveal.in{opacity:1;transform:none}
+    .t-item.reveal{transform:translateX(34px)}
+    .fact.reveal{transform:translateX(-30px)}
+    .t-item.reveal.in,.fact.reveal.in{transform:none}
+    .t-item::before{transition:transform .45s cubic-bezier(.34,1.56,.64,1) .25s}
+    .t-item.reveal:not(.in)::before{transform:scale(0)}
   }
 
   /* ---------- gallery ---------- */
@@ -865,15 +870,26 @@
   renderNews();
   renderPress();
 
-  // subtle scroll-reveal for cards and section headers
+  // scroll-reveal: generic fade-up, plus progressive opening for the timeline & fact cards
   (function(){
-    const sel = '.kicker,.lede,h2,.card,.pillar,.fact,.t-item,.pledge,.news-card,.press-item,.g-item,.fig,.min-logo-card,.min-info,blockquote,.q-attr,.c-item';
-    const els = document.querySelectorAll(sel);
-    els.forEach(el => el.classList.add('reveal'));
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, {threshold: .12});
-    els.forEach(el => io.observe(el));
+    function arm(selector, opts, step){
+      const els = document.querySelectorAll(selector);
+      els.forEach(el => el.classList.add('reveal'));
+      let chain = 0;
+      const io = new IntersectionObserver(entries => {
+        entries.filter(e => e.isIntersecting).forEach(en => {
+          const now = performance.now();
+          chain = Math.max(now, chain);
+          en.target.style.transitionDelay = Math.round(chain - now) + 'ms';
+          chain += step;
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        });
+      }, opts);
+      els.forEach(el => io.observe(el));
+    }
+    arm('.kicker,.lede,h2,.card,.pillar,.pledge,.news-card,.press-item,.g-item,.fig,.min-logo-card,.min-info,blockquote,.q-attr,.c-item', {threshold: .12}, 60);
+    arm('.t-item,.fact', {threshold: .55, rootMargin: '0px 0px -10% 0px'}, 130);
   })();
 
   /* ---------- detail modal ---------- */
